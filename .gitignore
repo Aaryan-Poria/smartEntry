@@ -1,0 +1,26 @@
+# Ignore image datasets
+known_images/
+test_images/
+
+# Ignore database files
+smart_entry.db
+*.sqlite
+*.sqlite3
+
+# Ignore logs
+logs/
+*.log
+
+# Ignore Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore virtual environments
+venv/
+.env/
+
+# Ignore system files
+.DS_Store
+Thumbs.db
