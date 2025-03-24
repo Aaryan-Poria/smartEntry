@@ -1,26 +1,38 @@
-# Ignore image datasets
-known_images/
-test_images/
+# Virtual environment
+venv/
+.venv/
 
-# Ignore database files
-smart_entry.db
-*.sqlite
-*.sqlite3
-
-# Ignore logs
-logs/
-*.log
-
-# Ignore Python cache
+# Python cache files
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
 
-# Ignore virtual environments
-venv/
-.env/
+# Streamlit cache
+.streamlit/
 
-# Ignore system files
+# Logs and temp files
+*.log
+*.sqlite3-journal
+
+# Environment variables and secrets
+.env
+*.env
+
+# SQLite database (if you don’t want to track it)
+smart_entry.db
+
+# Node.js (if you ever add frontend with Node)
+node_modules/
+package-lock.json
+yarn.lock
+
+# VS Code and JetBrains IDE settings (optional)
+.vscode/
+.idea/
+
+# MacOS and Linux system files
 .DS_Store
-Thumbs.db
+
+#image directories
+/known_images
