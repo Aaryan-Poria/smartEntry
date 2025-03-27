@@ -1,38 +1,21 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
 # Virtual environment
 venv/
-.venv/
+env/
 
-# Python cache files
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-
-# Streamlit cache
-.streamlit/
-
-# Logs and temp files
-*.log
-*.sqlite3-journal
-
-# Environment variables and secrets
-.env
-*.env
-
-# SQLite database (if you don’t want to track it)
+# Local database file (if you don't want to commit runtime data)
 smart_entry.db
 
-# Node.js (if you ever add frontend with Node)
-node_modules/
-package-lock.json
-yarn.lock
+# OS generated files
+.DS_Store
+Thumbs.db
 
-# VS Code and JetBrains IDE settings (optional)
+# Editor and IDE directories
 .vscode/
 .idea/
 
-# MacOS and Linux system files
-.DS_Store
-
-#image directories
-/known_images
+/test_images

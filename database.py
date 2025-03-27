@@ -1,33 +1,36 @@
 import sqlite3
 
-# Connect to SQLite database (creates if it doesn't exist)
-conn = sqlite3.connect("smart_entry.db")
-cursor = conn.cursor()
+def init_db():
+    conn = sqlite3.connect("smart_entry.db")
+    cursor = conn.cursor()
 
-# Create table if not exists
-cursor.execute("""
-CREATE TABLE IF NOT EXISTS domestic_help (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    unique_id TEXT UNIQUE,
-    name TEXT,
-    apartment_number TEXT,
-    owner_name TEXT,
-    role TEXT,
-    entry_time TEXT,
-    exit_time TEXT
-)
-""")
+    # Create domestic_help table if it doesn't exist
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS domestic_help (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        unique_id TEXT UNIQUE,
+        name TEXT,
+        apartment_number TEXT,
+        owner_name TEXT,
+        role TEXT,
+        entry_time TEXT,
+        exit_time TEXT
+    )
+    """)
 
-# Function to insert a domestic help record
-def insert_domestic_help(unique_id, name, apartment_number, owner_name, role, entry_time, exit_time):
-    cursor.execute("INSERT INTO domestic_help (unique_id, name, apartment_number, owner_name, role, entry_time, exit_time) VALUES (?, ?, ?, ?, ?, ?, ?)", 
-                   (unique_id, name, apartment_number, owner_name, role, entry_time, exit_time))
+    # Create access_logs table if it doesn't exist
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS access_logs (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        user_id TEXT,
+        name TEXT,
+        timestamp DATETIME,
+        status TEXT
+    )
+    """)
     conn.commit()
+    conn.close()
 
-# Function to fetch details using unique_id
-def get_domestic_help_by_id(unique_id):
-    cursor.execute("SELECT * FROM domestic_help WHERE unique_id = ?", (unique_id,))
-    return cursor.fetchone()
-
-
-conn.close()
+if __name__ == "__main__":
+    init_db()
+    print("Database initialized.")
