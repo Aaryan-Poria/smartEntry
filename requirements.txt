@@ -24,7 +24,7 @@ jsonschema==4.23.0
 jsonschema-specifications==2024.10.1
 MarkupSafe==3.0.2
 narwhals==1.32.0
-numpy==2.2.4
+numpy==2.0.2
 opencv-contrib-python==4.11.0.86
 opencv-python==4.11.0.86
 packaging==24.2
