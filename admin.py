@@ -1,9 +1,8 @@
 import streamlit as st
 import sqlite3
 import os
-import uuid  # For generating unique IDs
+import uuid  
 
-# Hardcoded admin credentials (for now; later you can move these to a secure store)
 ADMIN_CREDENTIALS = {"admin": "password123"}
 
 def authenticate(username, password):
