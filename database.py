@@ -4,7 +4,6 @@ def init_db():
     conn = sqlite3.connect("smart_entry.db")
     cursor = conn.cursor()
 
-    # Create domestic_help table if it doesn't exist
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS domestic_help (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -18,7 +17,6 @@ def init_db():
     )
     """)
 
-    # Create access_logs table if it doesn't exist
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS access_logs (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
